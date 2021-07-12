@@ -2,10 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "teamProcject_modaco_SPF.settings")
 import django
 django.setup()
-from news.models import BlogData
+from news_data.models import NewsData
 
 #python파일 위치
 #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -31,4 +31,4 @@ def news():
 if __name__ == '__main__':
     news_data_dict = news()
     for t, l in news_data_dict.items():
-        BlogData(title = t, link = l).save()
+        NewsData(title = t, link = l).save()

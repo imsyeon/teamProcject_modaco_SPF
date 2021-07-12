@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     'index',
     'customer_center',
+    'news_data',
+
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'teamProcject_modaco_SPF.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR /'news_data/tempaltes'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
