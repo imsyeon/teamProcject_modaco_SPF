@@ -2,13 +2,20 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Question
 from django.utils import timezone
 from .forms import QuestionForm, AnswerForm
+from django.core.paginator import Paginator
 
 def board(request):
     '''
     고객 게시판 목록 출력
     '''
+    #입력 파라메터
+    page = request.GET.get('page','1') #페이지
+    #조회
     question_list = Question.objects.order_by('-create_date')
-    context = {'question_list': question_list}
+    #페이징처리
+    paginator = Paginator(question_list,10) #페이지당 10개 출력
+    page_obj = paginator.get_page(page)
+    context = {'question_list': page_obj}
 
     return render(request, 'customer_board/question_list.html', context)
 
