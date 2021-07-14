@@ -14,6 +14,7 @@
 {% include 'index/navbar.html' %}
 
 
+
     <div class="container my-3">
         <!--chart-->
         <div class="row">
@@ -158,7 +159,23 @@
 
     </div>
 
+  <script>
+        function searchNotice(){
+            let searchValue = document.getElementById('search-input').value.trim();
+            if (searchValue.length > 1){
+                location.href="/notice/search/" + searchValue + "/";
+            }
+            else{
+                alert('검색어('+ searchValue +')가 너무 짧습니다.');
+            }
+        };
 
+        document.getElementById('search-input').addEventListener('keyup', function(event){
+            if(event.key === 'Enter'){
+                searchCompany();
+            }
+        });
+  </script>
 
 
 {% include 'index/footer.html' %}

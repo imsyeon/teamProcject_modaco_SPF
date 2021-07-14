@@ -3,6 +3,7 @@ from django.core.exceptions import PermissionDenied
 from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Notice
+from django.db.models import Q
 
 
 # Create your views here.
@@ -39,3 +40,21 @@ class NoticeUpdate(LoginRequiredMixin, UpdateView):
             return super(NoticeUpdate, self).dispatch(request, *args, **kwargs)
         else:
             raise PermissionDenied
+
+
+class NoticeSearch(NoticeList):
+#    paginate_by = None #페이징 설정되어있는것을 none으로 설정
+
+    def get_queryset(self):
+        q = self.kwargs['q']
+        notice_list = Notice.objects.filter(
+            Q(subject__contains=q)
+        ).distinct()
+        return notice_list
+
+    def get_context_data(self, **kwargs):
+        context = super(NoticeSearch, self).get_context_data()
+        q = self.kwargs['q']
+        context['search_info'] = f'Search: {q} ({self.get_queryset().count()})'
+
+        return context
