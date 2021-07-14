@@ -3,8 +3,9 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>MODACO</title>
+    <title>{% block head_title %}MODACO{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'index/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'index/css/index-main.css' %}" media="screen">
         <!--아이콘 키-->
     <script src="https://kit.fontawesome.com/4fb73240ec.js" crossorigin="anonymous"></script>
 </head>
@@ -13,16 +14,17 @@
 {% include 'index/navbar.html' %}
 
 
-
-
-
-
-
-
     <div class="container my-3">
         <!--chart-->
         <div class="row">
-            <div class="col-xl-6">
+            <div class="col-12">
+
+                {% block main_area %}
+                {% endblock %}
+
+                <br>
+                <br>
+
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-area me-1"></i>

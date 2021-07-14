@@ -1,0 +1,39 @@
+{% extends 'index/base.html' %}
+
+{% block main_area %}
+
+       {% if user.is_authenticated %}
+        {% if user.is_superuser or user.is_staff %}
+            <a class="btn btn-outline-secondary btn-sm float-right" href="/notice/create_post/" role="button">
+                <i class="fas fa-pen"></i>&nbsp;&nbsp;write
+            </a>
+        {% endif %}
+    {% endif %}
+
+    <h1>Notice</h1>
+
+    <!--notie table-->
+    <table class="table" id="datatablesSimple">
+        <thead>
+        <tr class="thead-dark">
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성일시</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if notice_list %}
+        {% for n in notice_list %}
+        <tr>
+            <td>{{ n.pk }}</td>
+            <td><a href="{{n.get_absolute_url}}">{{ n.subject }}</a></td>
+
+            <td>{{ n.create_date }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        </tbody>
+    </table>
+
+{% endblock %}
+

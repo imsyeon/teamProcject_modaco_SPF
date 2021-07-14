@@ -1,0 +1,59 @@
+{% extends 'index/base.html' %}
+
+{% block head_title %}
+    {{ notice.subject }} -MODACO
+{% endblock %}
+
+{% block main_area %}
+
+    <h1 class="border-bottom pb-3">Notice</h1>
+    <div class="row">
+        <div class="col">
+            <!-- Subject -->
+            <h2 class="mt-4">{{ notice.subject}}</h2>
+
+            <!-- Author / Date-->
+            <p class="lead">
+                {{ notice.author | upper }} | {{ notice.create_date }}
+                {% if user.is_authenticated and user == notice.author %}
+                     <a class="btn btn-outline-secondary btn-sm float-right" href="/notice/update_notice/{{ notice.pk}}/"
+                        role="button"><i class="fas fa-pen"></i> Edit Notice </a>
+                {% endif %}
+            </p>
+            <hr>
+
+            <!--이미지-->
+            {% if notice.head_image %}
+                <img class="img-fluid rounded" src="{{ notice.head_image.url }}" alt="{{ notice.subject }} head_image">
+            {% endif %}
+
+
+            <!--Content-->
+            <p>{{ notice.get_content_markdown | safe }}</p>
+
+            <!--첨부파일-->
+            {% if notice.file_upload %}
+                <a href="{{notice.file_uplad.url}}" class="btn btn-outline-secondary" role="button">
+                    Download:
+
+                    {% if notice.get_file_ext == 'csv' %}
+                        <i class="fas fa-file-csv"></i>
+                    {% elif notice.get_file_ext == 'xlsx' or notice.get_file_ext == 'xls' %}
+                        <i class="fas fa-file-excel"></i>
+                    {% elif post.get_file_ext == 'docx' or post.get_file_ext == 'doc' %}
+                        <i class="fas fa-file-word"></i>
+                    {% else %}
+                        <i class="fas fa-file"></i>
+                    {% endif %}
+                    {{ notice.get_file_name }}
+                </a>
+            {% endif %}
+
+
+        </div>
+    </div>
+
+    <h6 class="border-top pt-1">이전글:</h6>
+    <h6 class="border-bottom py-1">다음글:</h6>
+
+{% endblock %}

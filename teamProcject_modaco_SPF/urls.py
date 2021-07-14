@@ -16,14 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
 
     path('', include('index.urls')),
     path('admin/', admin.site.urls),
-    path('news/', include('news_data.urls')),
-    path('board/' , include('customer_board.urls')),
-    path('common/',include('common.urls')),
+    path('markdownx/', include('markdownx.urls')),
 
+    path('news/', include('news_data.urls')),
+
+    path('board/', include('customer_board.urls')),
+    path('notice/', include('notice.urls')),
+
+    path('common/', include('common.urls')),
 
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
