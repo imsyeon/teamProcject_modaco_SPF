@@ -23,5 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('news/', include('news_data.urls')),
     path('board/' , include('customer_board.urls')),
+<<<<<<< Updated upstream
 
+=======
+    path('common/',include('common.urls')),
+>>>>>>> Stashed changes
 ]
