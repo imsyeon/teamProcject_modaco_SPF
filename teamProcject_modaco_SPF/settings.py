@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'index',
-    'customer_center',
+
     'news_data',
     'customer_board',
 

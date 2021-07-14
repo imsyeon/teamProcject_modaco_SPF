@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CustomerCenterConfig(AppConfig):
+class NoticeConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'customer_center'
+    name = 'notice'

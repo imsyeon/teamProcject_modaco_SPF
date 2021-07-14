@@ -1,4 +1,4 @@
-#!d:\github\teamprocject_modaco_spf\venv\scripts\python.exe
+#!D:\projects\teamProcject_modaco_SPF\venv\Scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
