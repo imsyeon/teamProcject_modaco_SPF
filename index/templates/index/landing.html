@@ -28,7 +28,7 @@
                 {% for news in recent_news %}
                     <div class="card mt-1">
                         <div class="card-body">
-                            <h6><a href="{{ news.get_absolute_url }}" class="text-decoration-none text-dark">{{ news.title }}</a></h6>
+                            <h6><a href="https://finance.naver.com{{ news.link }}" class="text-decoration-none text-dark">{{ news.title }}</a></h6>
                         </div>
                     </div>
                 {% endfor %}

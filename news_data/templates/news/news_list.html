@@ -1,18 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>news_list</title>
-</head>
-<body>
-{% if news_list %}
-    <ul>
-    {% for news in news_list %}
-        <li><a href="https://finance.naver.com{{ news.link }}">{{ news.title }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>뉴스가 없습니다.</p>
-{% endif %}
-</body>
-</html>
+{% extends 'index/base.html' %}
+
+{% block main_area %}
+
+
+    {% if news_list %}
+    <div class="col-9 mt-5 mx-auto">
+        <h2 class="mb-5">주식 주요 뉴스</h2>
+        {% for news in news_list %}
+            <div class="card mt-1">
+                <div class="card-body">
+                    <h6><a href="https://finance.naver.com{{ news.link }}" class="text-decoration-none text-dark">{{ news.title }}</a></h6>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p>뉴스가 없습니다.</p>
+    {% endif %}
+
+<br>
+    {% if news_list %}
+    <div class="col-9 mx-auto">
+        <div class="card">
+            <div class="card-header bg-dark">
+                <h3 class="text-light">주식 주요 뉴스</h3>
+            </div>
+            <ul class="list-group list-group-flush">
+            {% for news in news_list %}
+                <li class="list-group-item py-3">
+                    <a href="https://finance.naver.com{{ news.link }}" class="text-decoration-none text-dark">{{ news.title }}</a>
+                </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% else %}
+            <p>뉴스가 없습니다.</p>
+        {% endif %}
+    </div>
+
+
+{% endblock %}
