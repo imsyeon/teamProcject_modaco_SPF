@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'index/bootstrap/bootstrap.min.css' %}">
-
+    <link rel="stylesheet" type="text/css" href="{% static 'index/css/style.css' %}">
     <title>MODACO</title>
 </head>
 <body>
@@ -16,6 +16,13 @@
 <!-- 기본 템플릿 안에 삽입될 내용 Start -->
 {% block content %}
 {% endblock %}
+<script src="{% static 'index/jquery/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'index/bootstrap/bootstrap.min.js' %}"></script>
+<!--자바스크립트 시작 -->
+{% block script %}
+{% endblock %}
+<!-- 자바스크립트 end -->
 <!-- 기본 템플릿 안에 삽입될 내용 End -->
+
 </body>
 </html>
