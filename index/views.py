@@ -13,3 +13,9 @@ def landing(request):
             'recent_news': recent_news,
         }
     )
+
+def analysis(request):
+    return render(
+        request,
+        'index/analysis.html',
+    )

@@ -1,0 +1,372 @@
+{% extends 'index/base.html' %}
+
+{% block main_area %}
+
+
+<div class="card text-center">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link btn-outline-secondary active" data-toggle="tab" href="#lg">LG</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#samsung">SAMSUNG</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#sk">SK hynix</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#kakao">KAKAO</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#hyundai">HYUNDAI</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="lg">
+                <h5 class="mb-3 text-left">LG 과거 데이터 예측분석</h5>
+
+
+                <!--LG 1개월 3개월 1년 3년 차트-->
+                <div class="card text-center">
+                    <div class="card-header">
+                        <ul class="nav nav-pills card-header-pills">
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-secondary active" data-toggle="tab" href="#lg_1month">1개월</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-secondary" data-toggle="tab"  href="#lg_6month">6개월</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#lg_1year">1년</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#lg_2year">2년</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#lg_3year">3년</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--차트 내용 넣기-->
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class=" tab-pane fade show active" id="lg_1month">
+                                <p class="card-text">
+                                    1개월 차트작성
+
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="lg_6month">
+                                <p class="card-text">
+                                    6개월 차트작성
+
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="lg_1year">
+                                <p class="card-text">
+                                    1년 차트작성
+
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="lg_2year">
+                                <p class="card-text">
+                                    2년 차트작성
+
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="lg_3year">
+                                <p class="card-text">
+                                    3년 차트작성
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="samsung">
+                <div class="tab-content">
+                    <h5 class="mb-3 text-left">삼성 과거 데이터 예측분석</h5>
+
+                    <!--삼성 1개월 3개월 1년 3년 차트-->
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <ul class="nav nav-pills card-header-pills">
+                                <li class="nav-item">
+                                    <a class="nav-link btn-outline-secondary active" data-toggle="tab" href="#samsung_1month">1개월</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn-outline-secondary" data-toggle="tab"  href="#samsung_6month">6개월</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#samsung_1year">1년</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#samsung_2year">2년</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#samsung_3year">3년</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--차트 내용 넣기-->
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <div class=" tab-pane fade show active" id="samsung_1month">
+                                    <p class="card-text">
+                                        1개월 차트작성
+
+                                    </p>
+                                </div>
+                                <div class="tab-pane fade" id="samsung_6month">
+                                    <p class="card-text">
+                                        6개월 차트작성
+
+                                    </p>
+                                </div>
+                                <div class="tab-pane fade" id="samsung_1year">
+                                    <p class="card-text">
+                                        1년 차트작성
+
+                                    </p>
+                                </div>
+                                <div class="tab-pane fade" id="samsung_2year">
+                                    <p class="card-text">
+                                        2년 차트작성
+
+                                    </p>
+                                </div>
+                                <div class="tab-pane fade" id="samsung_3year">
+                                    <p class="card-text">
+                                        3년 차트작성
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+                <div class="tab-pane fade" id="sk">
+                    <div class="tab-content">
+                        <h5 class="mb-3 text-left">SK 하이닉스 과거 데이터 예측분석</h5>
+
+                         <!--sk 1개월 3개월 1년 3년 차트-->
+                        <div class="card text-center">
+                            <div class="card-header">
+                                <ul class="nav nav-pills card-header-pills">
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary active" data-toggle="tab" href="#sk_1month">1개월</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary" data-toggle="tab"  href="#sk_6month">6개월</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#sk_1year">1년</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#sk_2year">2년</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#sk_3year">3년</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--차트 내용 넣기-->
+                            <div class="card-body">
+                                <div class="tab-content">
+                                    <div class=" tab-pane fade show active" id="sk_1month">
+                                        <p class="card-text">
+                                            1개월 차트작성
+
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="sk_6month">
+                                        <p class="card-text">
+                                            6개월 차트작성
+
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="sk_1year">
+                                        <p class="card-text">
+                                            1년 차트작성
+
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="sk_2year">
+                                        <p class="card-text">
+                                            2년 차트작성
+
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="sk_3year">
+                                        <p class="card-text">
+                                            3년 차트작성
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="tab-pane fade" id="kakao">
+                    <div class="tab-content">
+                        <h5 class="mb-3 text-left">카카오 과거 데이터 예측분석</h5>
+
+                        <!--카카오 1개월 3개월 1년 3년 차트-->
+                        <div class="card text-center">
+                            <div class="card-header">
+                                <ul class="nav nav-pills card-header-pills">
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary active" data-toggle="tab" href="#kakao_1month">1개월</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary" data-toggle="tab"  href="#kakao_6month">6개월</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#kakao_1year">1년</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#kakao_2year">2년</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#kakao_3year">3년</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--차트 내용 넣기-->
+                            <div class="card-body">
+                                <div class="tab-content">
+                                    <div class=" tab-pane fade show active" id="kakao_1month">
+                                        <p class="card-text">
+                                            1개월 차트작성
+
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="kakao_6month">
+                                        <p class="card-text">
+                                            6개월 차트작성
+
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="kakao_1year">
+                                        <p class="card-text">
+                                            1년 차트작성
+
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="kakao_2year">
+                                        <p class="card-text">
+                                            2년 차트작성
+
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="kakao_3year">
+                                        <p class="card-text">
+                                            3년 차트작성
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tab-pane fade" id="hyundai">
+                    <div class="tab-content">
+                        <h5 class="mb-3 text-left">현대 과거 데이터 예측분석</h5>
+
+                                                 <!--삼성 1개월 3개월 1년 3년 차트-->
+                        <div class="card text-center">
+                            <div class="card-header">
+                                <ul class="nav nav-pills card-header-pills">
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary active" data-toggle="tab" href="#hyundai_1month">1개월</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary" data-toggle="tab"  href="#hyundai_6month">6개월</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#hyundai_1year">1년</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#hyundai_2year">2년</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn-outline-secondary" data-toggle="tab" href="#hyundai_3year">3년</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--차트 내용 넣기-->
+                            <div class="card-body">
+                                <div class="tab-content">
+                                    <div class=" tab-pane fade show active" id="hyundai_1month">
+                                        <p class="card-text">
+                                            1개월 차트작성
+
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="hyundai_6month">
+                                        <p class="card-text">
+                                            6개월 차트작성
+
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="hyundai_1year">
+                                        <p class="card-text">
+                                            1년 차트작성
+
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="hyundai_2year">
+                                        <p class="card-text">
+                                            2년 차트작성
+
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="hyundai_3year">
+                                        <p class="card-text">
+                                            3년 차트작성
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    {% endblock %}
