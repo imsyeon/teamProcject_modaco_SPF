@@ -1,0 +1,27 @@
+pip install Django
+장고 설치
+
+pip install Pillow
+파이썬에 이미지 처리하기 위한 라이브러리
+
+pip install beautifulsoup4
+HTML로 나타나는 페이지의 요소를 쉽게 다룰 수 있는 도구(타이틀, 버튼 등에 써있는 내용은 무엇인지)
+
+pip install django-crispy forms
+폼이 한쪽으로 치우쳐져 있는 모양을 수정(폼이 가로화면 전체로 바뀜)
+
+pip install django-markdownx
+마크다운 설치
+
+pip install django-allauth
+구글, 카카오톡, 페이스북등으로 로그인하는 기능을 손쉽게 할 수 있도록 구현
+
+셸 플러스 설치
+pip install django_extension
+pip install ipython
+settings.py의 INSTALLED_APPS 리스트에 'django_extensions', 를 추가한다.
+터미널에 python manage.py shell_plus 실행한다.
+
+셸플러스는
+파이썬 코드에 따라 글자 색상이 다르게 표현되어 가독성이 높아지고 for문을 사용할때 들여쓰기도 자동으로 맞춰져 편리해진다. 또 Post와 Category 모델을 임포트하지않아도 바로 가져와 사용할 수 있다.
+

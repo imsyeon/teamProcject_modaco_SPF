@@ -12,14 +12,25 @@
             <!-- Subject -->
             <h2 class="mt-4">{{ notice.subject}}</h2>
 
-            <!-- Author / Date-->
+            <!-- Author / Date / 수정버튼 / 삭제버튼 -->
+
             <p class="lead">
                 {{ notice.author | upper }} | {{ notice.create_date }}
+
                 {% if user.is_authenticated and user == notice.author %}
-                     <a class="btn btn-outline-secondary btn-sm float-right" href="/notice/update_notice/{{ notice.pk}}/"
-                        role="button"><i class="fas fa-pen"></i> Edit Notice </a>
+
+                    <!--update Button -->
+                    <a class="btn btn-outline-secondary btn-sm float-right ml-1" href="/notice/update_notice/{{ notice.pk}}/"
+                        role="button"><i class="fas fa-pen"></i> Edit </a>
+
+                    <!-- delete Button -->
+                    <a class="btn btn-outline-secondary btn-sm float-right ml-1" href="#" id="notice-{{ notice.pk }}-delete-modal-btn"
+                        role="button" data-bs-toggle="modal" data-bs-target="#deleteNoticeModal-{{ notice.pk }}"><i class="fas fa-trash-alt"></i> Delete </a>
+
                 {% endif %}
+
             </p>
+
             <hr>
 
             <!--이미지-->
@@ -40,7 +51,7 @@
                         <i class="fas fa-file-csv"></i>
                     {% elif notice.get_file_ext == 'xlsx' or notice.get_file_ext == 'xls' %}
                         <i class="fas fa-file-excel"></i>
-                    {% elif post.get_file_ext == 'docx' or post.get_file_ext == 'doc' %}
+                    {% elif notice.get_file_ext == 'docx' or notice.get_file_ext == 'doc' %}
                         <i class="fas fa-file-word"></i>
                     {% else %}
                         <i class="fas fa-file"></i>
@@ -48,12 +59,37 @@
                     {{ notice.get_file_name }}
                 </a>
             {% endif %}
-
-
         </div>
     </div>
 
     <h6 class="border-top pt-1">이전글:</h6>
     <h6 class="border-bottom py-1">다음글:</h6>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteNoticeModal-{{ notice.pk }}" tabindex="-1" aria-labelledby="deleteNoticeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">{{ notice.subject }}</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="fas fa-times" data-dismiss="modal"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+          <p>정말 게시글을 삭제 하시겠습니까?</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <a role="button" class="btn btn-outline-secondary"
+             href="/notice/delete_notice/{{ notice.pk }}/" >Delete</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 
 {% endblock %}
