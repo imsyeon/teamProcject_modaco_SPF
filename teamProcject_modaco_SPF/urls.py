@@ -27,6 +27,7 @@ urlpatterns = [
     path('markdownx/', include('markdownx.urls')),
     path('accounts/', include('allauth.urls')),
 
+    path('stock/', include('stock.urls')),
     path('news/', include('news_data.urls')),
 
     path('board/', include('customer_board.urls')),

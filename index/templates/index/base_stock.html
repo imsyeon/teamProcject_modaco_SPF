@@ -5,49 +5,66 @@
     <meta charset="UTF-8">
     <title>{% block head_title %}MODACO{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'index/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'index/js/main.js' %}">
+    <link rel="stylesheet" href="{% static 'index/css/styles_sidebar.css' %}" media="screen">
 
     <!--아이콘 키-->
     <script src="https://kit.fontawesome.com/4fb73240ec.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body id="body">
 
 {% include 'index/navbar.html' %}
 
 
+!-- Page Wrapper -->
+    <div id="wrapper">
+        <div class="l-navbar" id="navbar">
+        <nav class="nav">
+            <div>
+                <div class="nav_brand">
+                    <i class="fas fa-bars nav__toggle" id="nav-toggle"></i>
+                </div>
+                <div class="nav__list">
+                    <a href="#" class="nav__link active">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="nav_name">&nbsp;KOSPI</span>
+                    </a>
 
-    <div class="container my-3">
-        <!--chart-->
-        <div class="row">
-            <div class="col-12">
+                    <a href="#" class="nav__link">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="nav_name">&nbsp;KOSDAQ</span>
+                    </a>
 
-                {% block main_area %}
-                {% endblock %}
+                    <a href="#" class="nav__link">
+                        <i class="fas fa-list-ul"></i>
+                        <span class="nav_name">&nbsp;시가총액</span>
+                    </a>
+
+                    <a href="#" class="nav__link">
+                        <i class="far fa-clipboard"></i>
+                        <span class="nav_name">&nbsp;&nbsp;종목분석 리포트</span>
+                    </a>
+
+                    <a href="#" class="nav__link">
+                        <i class="fas fa-list-ol"></i>
+                        <span class="nav_name">&nbsp;구매량 top 100</span>
+                    </a>
+                </div>
             </div>
+        </nav>
+        </div>
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
         </div>
     </div>
 
 
 
-  <script>
-        function searchNotice(){
-            let searchValue = document.getElementById('search-input').value.trim();
-            if (searchValue.length > 1){
-                location.href="/notice/search/" + searchValue + "/";
-            }
-            else{
-                alert('검색어('+ searchValue +')가 너무 짧습니다.');
-            }
-        };
-
-        document.getElementById('search-input').addEventListener('keyup', function(event){
-            if(event.key === 'Enter'){
-                searchCompany();
-            }
-        });
-  </script>
 
 
-{% include 'index/footer.html' %}
+
+
 
 
 

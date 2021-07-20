@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'news_data',
     'customer_board',
     'common',
+    'stock',
 
 
     'crispy_forms',
