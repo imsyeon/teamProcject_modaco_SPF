@@ -12,7 +12,7 @@ from news_data.models import NewsData
 
 def news():
 
-    req = requests.get('https://cc.naver.com/cc?a=new.main&r=&i=&bw=1085&px=112&py=298&sx=112&sy=298&m=1&nsc=finance.news&u=https%3A%2F%2Ffinance.naver.com%2Fnews%2Fmainnews.nhn')
+    req = requests.get('https://finance.naver.com/news/news_list.nhn?mode=LSS2D&section_id=101&section_id2=258')
     ## HTML 소스 가져오기
     html = req.text
     soup = BeautifulSoup(html,'html.parser')
@@ -24,7 +24,7 @@ def news():
 
     ## my_titles는 list 객체
     for title in my_titles:
-        data[title.text] = title.get('href')
+        data[title.text] = title.get('href').replace('§','&sect')
 
     return data
 

@@ -6,9 +6,14 @@ xmlhttp.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
         var data = JSON.parse(this.responseText);
         //console.log(data);
-        var predDate = data.data.map(function(elem){
-            elem.pred_date=elem.pred_date
-            return elem.pred_date;
+         var predDate = data.data.map(function(elem){
+            if (elem.pred_date == null){
+                return elem.pred_date;
+            }else{
+                elem.pred_date=elem.pred_date.substr(0, 10)
+                return elem.pred_date;
+
+            }
         });
         //console.log(predictPrice)
         var predictPrice = data.data.map(function(elem){

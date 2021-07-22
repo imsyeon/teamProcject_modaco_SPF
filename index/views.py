@@ -4,7 +4,7 @@ from news_data.models import NewsData
 # Create your views here.
 
 def landing(request):
-    recent_news = NewsData.objects.order_by('-pk')[:3]
+    recent_news = NewsData.objects.order_by('-title')[:3]
 
     return render(
         request,
@@ -101,6 +101,10 @@ def sk2021_03(request):
     return render(request,
                   'index/sk/sk2021_03~_project.html', )
 
+def hyundai2019_02(request):
+    return render(request,
+                  'index/hyundai/hyundai2019_02~_project.html', )
+
 def hyundai2020_01(request):
     return render(request,
                   'index/hyundai/hyundai2020_01~_project.html', )
@@ -116,3 +120,4 @@ def hyundai2021_01(request):
 def hyundai2021_03(request):
     return render(request,
                   'index/hyundai/hyundai2021_03~_project.html', )
+

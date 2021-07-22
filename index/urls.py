@@ -26,8 +26,10 @@ urlpatterns = [
     path('sk2020_07/', views.sk2020_07, name='sk2020_07'),
     path('sk2021_01/', views.sk2021_01, name='sk2021_01'),
     path('sk2021_03/', views.sk2021_03, name='sk2021_03'),
+    path('hyundai2019_02/', views.hyundai2019_02, name='hyundai2019_02'),
     path('hyundai2020_01/', views.hyundai2020_01, name='hyundai2020_01'),
     path('hyundai2020_07/', views.hyundai2020_07, name='hyundai2020_07'),
     path('hyundai2021_01/', views.hyundai2021_01, name='hyundai2021_01'),
     path('hyundai2021_03/', views.hyundai2021_03, name='hyundai2021_03'),
+
 ]

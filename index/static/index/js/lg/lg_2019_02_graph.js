@@ -7,8 +7,13 @@ xmlhttp.onreadystatechange = function(){
         var data = JSON.parse(this.responseText);
         //console.log(data);
         var predDate = data.data.map(function(elem){
-            elem.pred_date=elem.pred_date
-            return elem.pred_date;
+            if (elem.pred_date == null){
+                return elem.pred_date;
+            }else{
+                elem.pred_date=elem.pred_date.substr(0, 10)
+                return elem.pred_date;
+
+            }
         });
         //console.log(predictPrice)
         var predictPrice = data.data.map(function(elem){
@@ -67,4 +72,3 @@ var myChart = new Chart(ctx, {
 });
     }
 }
-
