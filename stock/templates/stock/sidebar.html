@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block head_title %}MODACO{% endblock %}</title>
+    <title>MONACO</title>
 
     <link rel="stylesheet" href="{% static 'index/bootstrap/bootstrap.min.css' %}" media="screen">
 
@@ -25,48 +25,47 @@
         <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/stock">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active mt-3">
-                <a class="nav-link" href="index.html">
+            <li class="nav-item mt-4">
+                <a class="nav-link" href="/stock">
                     <i class="fas fa-chart-line"></i>
                     <span>KOSPI</span></a>
             </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/stock/kosdaq">
                     <i class="fas fa-chart-line"></i>
                     <span>KOSDAQ</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-list-ul"></i>
-                    <span>시가총액</span></a>
+                <a class="nav-link" href="/stock/kospicap">
+                    <i class="fas fa-list-ol"></i>
+                    <span>KOSPI 시가총액</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/stock/capitalzation">
+                    <i class="fas fa-list-ol"></i>
+                    <span>KOSDAQ 시가총액</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/stock/report">
                     <i class="far fa-clipboard"></i>
                     <span>종목 분석</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-list-ol"></i>
-                    <span>구매량 TOP100</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -76,35 +75,43 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-
-
         </ul>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column mt-5">
 
             <!-- Main Content -->
             <div id="content">
 
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">KOSPI</h1>
+                    </div>
+                    <!-- Content Row -->
+                    <div class="row">
 
 
+                        {% block main_area %}
+                        {% endblock %}
+
+
+
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
-
             </div>
             <!-- End of Main Content -->
-
-
-
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
+
+
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -129,5 +136,4 @@
 
 </body>
 </html>
-
 

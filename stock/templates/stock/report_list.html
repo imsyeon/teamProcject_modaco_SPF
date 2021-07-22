@@ -1,0 +1,76 @@
+{% extends 'stock/sidebar.html' %}
+
+{% block main_area %}
+
+
+
+<!--kospi table-->
+<div class="card mb-4 col-12">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        종목 분석 리포트
+    </div>
+    <div class="card-body">
+        <table class="table" id="datatablesSimple">
+            <thead>
+            <tr>
+                <th>종목명</th>
+                <th>제목</th>
+                <th>증권사</th>
+                <th>첨부파일</th>
+                <th>작성일</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% if report_list %}
+            {% for k in report_list %}
+
+            <tr>
+                <td>{{ k.report_stock }}</td>
+                <td>{{ k.report_title }}</td>
+                <td>{{ k.report_publisher }}</td>
+                <td><a href="{{ k.report_link }}"><i class="fas fa-file-pdf"></i></a></td>
+                <td>{{ k.report_date }}</td>
+            </tr>
+            {% endfor %}
+            {%  endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% if is_paginated %}
+<ul class="pagination">
+    {% if page_obj.has_previous %}
+    <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}"
+            tabindex="-1">이전</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1">이전</a>
+    </li>
+    {% endif %}
+
+    {% for page in page_range %}
+    <li class="page-item {% if page == page_obj.number %} activate {% endif %}">
+        <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+    </li>
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <li class="page-item">
+        <a class="page-link"
+            href="?page={{ page_obj.next_page_number }}">다음</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+        <a class="page-link" href="#">다음</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
+
+{% endblock %}

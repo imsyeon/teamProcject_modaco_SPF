@@ -1,0 +1,74 @@
+{% extends 'stock/sidebar.html' %}
+
+{% block main_area %}
+
+<!--kospi table-->
+<div class="card mb-4 col-12">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        시가총액
+    </div>
+    <div class="card-body">
+        <table class="table" id="datatablesSimple">
+            <thead>
+            <tr>
+                <th>순위</th>
+                <th>종목명</th>
+                <th>현재가</th>
+                <th>시가총액(억원)</th>
+                <th>거래량</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% if capitalzation_list %}
+            {% for c in capitalzation_list %}
+            <tr>
+                <td>{{ c.stockRank }}</td>
+                <td>{{ c.stockName }}</td>
+                <td>{{ c.stockPrice }}</td>
+                <td>{{ c.stockCap }}</td>
+                <td>{{ c.stockVolume }}</td>
+            </tr>
+            {% endfor %}
+            {%  endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% if is_paginated %}
+<ul class="pagination">
+    {% if page_obj.has_previous %}
+    <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}"
+            tabindex="-1">이전</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1">이전</a>
+    </li>
+    {% endif %}
+
+    {% for page in page_range %}
+    <li class="page-item {% if page == page_obj.number %} activate {% endif %}">
+        <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+    </li>
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <li class="page-item">
+        <a class="page-link"
+            href="?page={{ page_obj.next_page_number }}">다음</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+        <a class="page-link" href="#">다음</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
+
+
+{% endblock %}
