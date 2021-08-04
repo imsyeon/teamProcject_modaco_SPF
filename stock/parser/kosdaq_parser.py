@@ -20,6 +20,10 @@ def kosdaq():
         soup = bs(html, "lxml")
 
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     # 3. 데이터 추출(파싱)단계
         kosdaqContents = soup.select("body > div > table.type_1 > tr")
         for kc in kosdaqContents:
