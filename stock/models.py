@@ -24,7 +24,7 @@ class Report(models.Model):
     def __str__(self):
             return f'[{self.pk}]{self.report_title}'
 
-<<<<<<< Updated upstream
+
 class Capitalzation(models.Model):
     stockRank = models.IntegerField()
     stockName = models.CharField(max_length=40)
@@ -44,6 +44,5 @@ class Kospicap(models.Model):
 
     def __str__(self):
             return f'[{self.stockRank}]{self.stockName}'
-=======
->>>>>>> Stashed changes
+
 
