@@ -94,6 +94,7 @@
       * 로그인을 해야만 글등록, 답글, 수정, 삭제, 댓글, 대댓글을 쓸 수 있도록 구현.
       * 댓글이 있는경우 게시판 리스트에 표시하는 기능 구현.
       * 수정한 날짜 기능 구현
+      * 페이징 처리
       * customer_board에서 기능 구현
     ####
 ![QnA](https://user-images.githubusercontent.com/86580625/128130844-88700b5f-1d6c-4a89-a4c4-27156cc0b9fc.jpg)
@@ -108,13 +109,13 @@
 ## 외부 리소스, 출처 및 참고문헌
 ________
 1. 구글 API : 구글아이디로 로그인
-2. bootstrap
-3. fontawesome : icon 이미지 가져오기
-4. http://hangul.thefron.me/ : 게시판 테스트를 위해 장문의 글이 생성되는 사이트
-5.   chart.js API
+2. chart.js API : 주가 분석 json 데이터 그래프 구현
+3. bootstrap
+4. fontawesome : icon 이미지 가져오기
+5. http://hangul.thefron.me/ : 게시판 테스트를 위해 장문의 글이 생성되는 사이트
 6. 네이버증권 : 국내증시 정보 크롤링
 7. 야후 증권 : 과거데이터를 통해 예측 분석
-8. 네이버뉴스   
+8. 네이버뉴스 : 실시간 뉴스, 주요 뉴스 크롤링 후 DB 저장   
 9. 점프 투 장고
 10. 장고+부트스트랩 파이썬 웹개발의 정석
 
